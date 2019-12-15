@@ -3,6 +3,7 @@ import 'package:practice_api/services/user_service.dart';
 import 'package:practice_api/models/user.dart';
 import 'package:practice_api/user_info.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,7 +70,7 @@ class MyHomePage extends StatelessWidget {
                               colors: [
                                 // Colors are easy thanks to Flutter's Colors class.
                                 Theme.of(context).primaryColorDark,
-                                Theme.of(context).accentColor,
+                                Theme.of(context).primaryColor,
                               ],
                             ),
                           ),
@@ -104,13 +105,11 @@ class MyHomePage extends StatelessWidget {
                   });
             } else {
               return Center(
-                  child: Text(
-                      'waiting...',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      color: Colors.indigo,
-                    ),
-                  ));
+                  child: SpinKitWave(
+                    color: Theme.of(context).primaryColor,
+                    size: 50.0,
+                  )
+              );
             }
           },
         ),
