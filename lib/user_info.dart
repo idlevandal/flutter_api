@@ -45,6 +45,16 @@ class UserInfo extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('images/person${user.id}.jpg'),
+                  radius: 40.0,
+                ),
+              ),
+              SizedBox(
+                height: 12.0,
+              ),
               MyText(text: '${user.id}. ${user.name}'),
               MyText(text: 'Email: ${user.email.toLowerCase()}'),
               MyText(text: 'Ph: ${user.phone}'),
