@@ -18,49 +18,55 @@ class UserInfo extends StatelessWidget {
         title: Text('User Info'),
       ),
       body: Center(
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              // Where the linear gradient begins and ends
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              // Add one stop for each color. Stops should increase from 0 to 1
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40.0),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                // Where the linear gradient begins and ends
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                // Add one stop for each color. Stops should increase from 0 to 1
 //                              stops: [0.1, 0.5, 0.7, 0.9],
-              colors: [
-                // Colors are easy thanks to Flutter's Colors class.
-                Theme.of(context).primaryColorDark,
-                Theme.of(context).accentColor,
+                colors: [
+                  // Colors are easy thanks to Flutter's Colors class.
+                  Theme.of(context).primaryColor,
+                  Color(0xff42a5f5),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                new BoxShadow(
+                    color: Colors.black38,
+                    offset: new Offset(3.0, 3.0),
+                    blurRadius: 10.0)
               ],
             ),
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              new BoxShadow(
-                  color: Colors.black38,
-                  offset: new Offset(3.0, 3.0),
-                  blurRadius: 10.0)
-            ],
-          ),
-          padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('images/person${user.id}.jpg'),
-                  radius: 40.0,
+            padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('images/person${user.id}.jpg'),
+                      radius: 40.0,
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 12.0,
-              ),
-              MyText(text: '${user.id}. ${user.name}'),
-              MyText(text: 'Email: ${user.email.toLowerCase()}'),
-              MyText(text: 'Ph: ${user.phone}'),
-              MyText(text: 'Username: ${user.userName}'),
-              MyText(text: 'City: ${user.city}'),
-            ],
+                SizedBox(
+                  height: 12.0,
+                ),
+                MyText(text: '${user.id}. ${user.name}'),
+                MyText(text: 'E: ${user.email.toLowerCase()}'),
+                MyText(text: 'Ph: ${user.phone}'),
+                MyText(text: 'Username: ${user.userName}'),
+                MyText(text: 'City: ${user.city}'),
+              ],
+            ),
           ),
         ),
       ),
@@ -82,7 +88,7 @@ class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 30.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 20.0),
       child: Text(
         text,
         style: TextStyle(
