@@ -69,7 +69,7 @@ class MyHomePage extends StatelessWidget {
 //                              stops: [0.1, 0.5, 0.7, 0.9],
                               colors: [
                                 // Colors are easy thanks to Flutter's Colors class.
-                                Theme.of(context).primaryColor,
+                                Colors.blue.shade700,
                                 Color(0xff42a5f5),
                               ],
                             ),

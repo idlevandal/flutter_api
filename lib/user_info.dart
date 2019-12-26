@@ -19,7 +19,7 @@ class UserInfo extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -30,7 +30,7 @@ class UserInfo extends StatelessWidget {
 //                              stops: [0.1, 0.5, 0.7, 0.9],
                 colors: [
                   // Colors are easy thanks to Flutter's Colors class.
-                  Theme.of(context).primaryColor,
+                  Colors.blue.shade700,
                   Color(0xff42a5f5),
                 ],
               ),
@@ -42,7 +42,7 @@ class UserInfo extends StatelessWidget {
                     blurRadius: 10.0)
               ],
             ),
-            padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
+            padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 10.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
